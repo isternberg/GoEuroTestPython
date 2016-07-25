@@ -10,8 +10,7 @@ def consume_api(city):
 
 def to_csv(json_obj, _file="go_euro_output.csv"):
     with open(_file, 'w', newline='') as csvfile:
-        writer = csv.writer(csvfile, delimiter=',',
-                                quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        writer = csv.writer(csvfile)
         for result in json_obj:
             writer.writerow(result)
 
