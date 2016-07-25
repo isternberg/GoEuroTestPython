@@ -8,11 +8,11 @@ def consume_api(city):
                 for i in response.json() ]
     return relevant_data
 
-def to_csv(json_obj, _file="go_euro_output.csv"):
+def to_csv(data_list, _file="go_euro_output.csv"):
     with open(_file, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
-        for result in json_obj:
-            writer.writerow(result)
+        for item in data_list:
+            writer.writerow(item)
 
 if __name__ == "__main__":
     city = sys.argv[1]
